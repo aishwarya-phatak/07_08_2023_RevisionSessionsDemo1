@@ -17,10 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-3x-vcA">
-                                <rect key="frame" x="16" y="98" width="358" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-3x-vcA">
+                                <rect key="frame" x="20" y="97" width="350" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="uo6-sA-9gs"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="5" id="xRy-xM-5qz">
                                     <size key="itemSize" width="300" height="250"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -39,9 +41,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ho9-id-0hK">
+                                <rect key="frame" x="50" y="497" width="290" height="213"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojJ-vK-pHR">
+                                        <rect key="frame" x="25" y="33" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cMt-3x-vcA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="2a5-02-m9S"/>
+                            <constraint firstItem="cMt-3x-vcA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="F8U-b5-8fT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ho9-id-0hK" secondAttribute="trailing" constant="50" id="Rvb-Nu-4r1"/>
+                            <constraint firstItem="ho9-id-0hK" firstAttribute="top" secondItem="cMt-3x-vcA" secondAttribute="bottom" constant="100" id="WcK-uA-1rP"/>
+                            <constraint firstItem="ho9-id-0hK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="XBe-vW-d2d"/>
+                            <constraint firstItem="cMt-3x-vcA" firstAttribute="centerX" secondItem="ho9-id-0hK" secondAttribute="centerX" id="XpT-a9-aTD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ho9-id-0hK" secondAttribute="bottom" constant="100" id="jqR-nm-pE1"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imagesCollectionView" destination="cMt-3x-vcA" id="se4-zk-rKz"/>

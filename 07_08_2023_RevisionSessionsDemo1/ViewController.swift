@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagesCollectionView.backgroundColor = .lightGray
         registerXIBWithCollectionView()
         initializeCollectionView()
     }
@@ -39,6 +40,17 @@ extension ViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let productCollectionViewCell = self.imagesCollectionView.dequeueReusableCell(withReuseIdentifier: productCellectionViewCellIdentifier, for: indexPath) as? ProductCollectionViewCell
+    
+        productCollectionViewCell?.productImageView.layer.cornerRadius = 10.0
+        
+        productCollectionViewCell?.layer.borderWidth = 5.0
+        productCollectionViewCell!.layer.borderColor = CGColor(
+            red: 50.0,
+            green: 0.0,
+            blue: 50.0,
+            alpha: 5.0)
+        
+        productCollectionViewCell?.layer.cornerRadius = 20.0
         
         productCollectionViewCell?.productImageView.image = UIImage(named: productImages[indexPath.row])
         
